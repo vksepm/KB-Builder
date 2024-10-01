@@ -51,7 +51,7 @@ If you have more questions, you can check the manual, or report them through iss
 
 ## Technology Stack
 - Frontend：[Vue.js](https://cn.vuejs.org/)
-- Backend：[Python / Django](https://www.djangoproject.com/)![Uploading image-2.png…]()
+- Backend：[Python / Django](https://www.djangoproject.com/)
 
 - LangChain：[LangChain](https://www.langchain.com/)
 - Vector database：[PostgreSQL / pgvector](https://www.postgresql.org/)

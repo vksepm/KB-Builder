@@ -1,4 +1,4 @@
-# 邮箱配置
+# Mailbox Configuration
 EMAIL_ADDRESS:
 EMAIL_USE_TLS: False
 EMAIL_USE_SSL: True
@@ -7,7 +7,7 @@ EMAIL_PORT: 465
 EMAIL_HOST_USER:
 EMAIL_HOST_PASSWORD:
 
-# 数据库链接信息
+# Database link information
 DB_NAME: kb_builder
 DB_HOST: localhost
 DB_PORT: 5432
@@ -17,4 +17,4 @@ DB_ENGINE: django.db.backends.postgresql_psycopg2
 
 DEBUG: false
 
-TIME_ZONE: Asia/Shanghai
+TIME_ZONE: America/Toronto

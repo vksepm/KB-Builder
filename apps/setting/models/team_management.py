@@ -56,7 +56,7 @@ class TeamMemberPermission(AppModelMixin):
 
     target = models.UUIDField(max_length=128, verbose_name="数据集/应用id")
 
-    operate = ArrayField(verbose_name="权限操作列表",
+    operate = ArrayField(verbose_name="Permission Operation List",
                          base_field=models.CharField(max_length=256,
                                                      blank=True,
                                                      choices=AuthOperate.choices,

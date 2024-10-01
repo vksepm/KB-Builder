@@ -109,7 +109,7 @@ const onSubmit = async () => {
           if (valid) {
             const obj = { ...BaseFormRef.value.form, ...form.value }
             datasetApi.postWebDataset(obj, loading).then((res) => {
-              MsgSuccess('提交成功')
+              MsgSuccess('Submit successfully')
               dataset.saveBaseInfo(null)
               dataset.saveWebInfo(null)
               router.push({ path: `/dataset/${res.data.id}/document` })

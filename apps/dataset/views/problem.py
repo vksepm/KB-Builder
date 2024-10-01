@@ -1,7 +1,7 @@
 # coding=utf-8
 """
     @project: maxkb
-    @Author：虎
+    @Author：Tiger
     @file： problem.py
     @date：2023/10/23 13:54
     @desc:

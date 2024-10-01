@@ -1,5 +1,5 @@
 <template>
-  <LayoutContainer header="用户管理">
+  <LayoutContainer header="User Management">
     <div class="p-24">
       <div class="flex-between">
         <el-button type="primary" @click="createUser">创建用户</el-button>
@@ -60,7 +60,7 @@
               </el-tooltip>
             </span>
             <span class="mr-4">
-              <el-tooltip effect="dark" content="删除" placement="top">
+              <el-tooltip effect="dark" content="delete" placement="top">
                 <el-button
                   :disabled="row.role === 'ADMIN'"
                   type="primary"
@@ -133,17 +133,17 @@ function createUser() {
 
 function deleteUserManage(row: any) {
   MsgConfirm(
-    `是否删除用户：${row.username} ?`,
-    `删除用户，该用户创建的资源（应用、知识库、模型）都会删除，请谨慎操作。`,
+    `Delete user?：${row.username} ?`,
+    `If you delete a user, all resources (applications, knowledge bases, models) created by the user will be deleted. Please operate with caution.`,
     {
-      confirmButtonText: '删除',
+      confirmButtonText: 'delete',
       confirmButtonClass: 'danger'
     }
   )
     .then(() => {
       loading.value = true
       userApi.delUserManage(row.id, loading).then(() => {
-        MsgSuccess('删除成功')
+        MsgSuccess('Deleted successfully')
         getList()
       })
     })

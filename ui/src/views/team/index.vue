@@ -11,7 +11,7 @@
         <div class="team-member-input">
           <el-input
             v-model="filterText"
-            placeholder="请输入用户名搜索"
+            placeholder="Please enter your username to search"
             prefix-icon="Search"
             clearable
           />
@@ -36,7 +36,7 @@
                   </span>
                   <template #dropdown>
                     <el-dropdown-menu>
-                      <el-dropdown-item @click.prevent="deleteMember(row)">移除</el-dropdown-item>
+                      <el-dropdown-item @click.prevent="deleteMember(row)">Remove</el-dropdown-item>
                     </el-dropdown-menu>
                   </template>
                 </el-dropdown>
@@ -145,7 +145,7 @@ function submitPermissions() {
 
   TeamApi.putMemberPermissions(currentUser.value, obj)
     .then(() => {
-      MsgSuccess('提交成功')
+      MsgSuccess('Submit successfully')
       MemberPermissions(currentUser.value)
     })
     .catch(() => {
@@ -173,11 +173,11 @@ function MemberPermissions(id: String) {
 
 function deleteMember(row: TeamMember) {
   MsgConfirm(
-    `是否移除成员：${row.username}?`,
-    '移除后将会取消成员拥有的知识库和应用权限。',
+    `Remove member?：${row.username}?`,
+    'Removal will cancel the member's knowledge base and app permissions.',
 
     {
-      confirmButtonText: '移除',
+      confirmButtonText: 'Remove',
       confirmButtonClass: 'danger'
     }
   )
@@ -185,7 +185,7 @@ function deleteMember(row: TeamMember) {
       loading.value = true
       TeamApi.delTeamMember(row.id)
         .then(() => {
-          MsgSuccess('删除成功')
+          MsgSuccess('Deleted successfully')
           getMember()
         })
         .catch(() => {

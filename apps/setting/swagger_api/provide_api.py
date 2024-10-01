@@ -1,7 +1,7 @@
 # coding=utf-8
 """
     @project: maxkb
-    @Author：虎
+    @Author：Tiger
     @file： provide_api.py
     @date：2023/11/2 14:25
     @desc:

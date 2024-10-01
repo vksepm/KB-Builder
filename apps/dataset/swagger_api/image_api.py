@@ -1,7 +1,7 @@
 # coding=utf-8
 """
     @project: maxkb
-    @Author：虎
+    @Author：Tiger
     @file： image_api.py
     @date：2024/4/23 11:23
     @desc:

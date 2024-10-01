@@ -46,7 +46,7 @@
     </div>
     <template #footer>
       <span class="dialog-footer">
-        <el-button @click.prevent="dialogVisible = false"> 取消 </el-button>
+        <el-button @click.prevent="dialogVisible = false"> Cancel </el-button>
         <el-button type="primary" @click="submitHandle" :disabled="!selectDataset || loading">
           确认
         </el-button>

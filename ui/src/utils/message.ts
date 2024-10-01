@@ -45,7 +45,7 @@ export const MsgConfirm = (title: string, description: string, options?: any) =>
   const defaultOptions: Object = {
     showCancelButton: true,
     confirmButtonText: '确定',
-    cancelButtonText: '取消',
+    cancelButtonText: 'Cancel',
     ...options
   }
   return ElMessageBox.confirm(description, title, defaultOptions)

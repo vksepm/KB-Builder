@@ -7,8 +7,8 @@ ARG DEPENDENCIES="                    \
         python3.11-venv               \
         postgresql-15-pgvector"
 
-RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
-    echo "Asia/Shanghai" > /etc/timezone && \
+RUN ln -sf /usr/share/zoneinfo/America/Toronto /etc/localtime && \
+    echo "America/Toronto" > /etc/timezone && \
     apt-get update && apt-get install -y --no-install-recommends $DEPENDENCIES && \
     apt-get clean all  && \
     rm -rf /var/lib/apt/lists/*

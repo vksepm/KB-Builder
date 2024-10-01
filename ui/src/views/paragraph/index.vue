@@ -255,7 +255,7 @@ function deleteParagraph(row: any) {
       paragraph.asyncDelParagraph(id, documentId, row.id, loading).then(() => {
         const index = paragraphDetail.value.findIndex((v) => v.id === row.id)
         paragraphDetail.value.splice(index, 1)
-        MsgSuccess('删除成功')
+        MsgSuccess('Deleted successfully')
       })
     })
     .catch(() => {

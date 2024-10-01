@@ -14,8 +14,8 @@ export default {
         confirmTitle: '是否删除应用：',
         confirmMessage: '删除后该应用将不再提供服务，请谨慎操作。',
         confirmButton: '删除',
-        cancelButton: '取消',
-        successMessage: '删除成功'
+        cancelButton: 'Cancel',
+        successMessage: 'Deleted successfully'
       }
     },
     tooltips: {
@@ -33,12 +33,12 @@ export default {
     form: {
       appName: {
         label: '应用名称',
-        placeholder: '请输入应用名称',
-        requiredMessage: '请输入应用名称'
+        placeholder: 'Please enter the application name',
+        requiredMessage: 'Please enter the application name'
       },
       appDescription: {
-        label: '应用描述',
-        placeholder: '描述该应用的应用场景及用途，如：KB Builder 小助手回答用户提出的 KB Builder 产品使用问题'
+        label: 'Application Description',
+        placeholder: 'Describe the application scenarios and uses of the app, such as: KB Builder Assistant answers questions raised by users about the use of KB Builder products'
       },
       aiModel: {
         label: 'AI 模型',
@@ -66,7 +66,7 @@ export default {
     },
     buttons: {
       confirm: '确认',
-      cancel: '取消',
+      cancel: 'Cancel',
       create: '创建',
       createSuccess: '创建',
       save: '保存',

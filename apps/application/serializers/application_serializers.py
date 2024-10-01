@@ -109,7 +109,7 @@ class ApplicationSerializer(serializers.Serializer):
     name = serializers.CharField(required=True, max_length=64, min_length=1, error_messages=ErrMessage.char("应用名称"))
     desc = serializers.CharField(required=False, allow_null=True, allow_blank=True,
                                  max_length=256, min_length=1,
-                                 error_messages=ErrMessage.char("应用描述"))
+                                 error_messages=ErrMessage.char("Application Description"))
     model_id = serializers.CharField(required=False, allow_null=True, allow_blank=True,
                                      error_messages=ErrMessage.char("模型"))
     multiple_rounds_dialogue = serializers.BooleanField(required=True, error_messages=ErrMessage.char("多轮对话"))
@@ -255,7 +255,7 @@ class ApplicationSerializer(serializers.Serializer):
         name = serializers.CharField(required=False, max_length=64, min_length=1,
                                      error_messages=ErrMessage.char("应用名称"))
         desc = serializers.CharField(required=False, max_length=256, min_length=1, allow_null=True, allow_blank=True,
-                                     error_messages=ErrMessage.char("应用描述"))
+                                     error_messages=ErrMessage.char("Application Description"))
         model_id = serializers.CharField(required=False, allow_blank=True, allow_null=True,
                                          error_messages=ErrMessage.char("模型"))
         multiple_rounds_dialogue = serializers.BooleanField(required=False,
@@ -375,7 +375,7 @@ class ApplicationSerializer(serializers.Serializer):
     class Query(serializers.Serializer):
         name = serializers.CharField(required=False, error_messages=ErrMessage.char("应用名称"))
 
-        desc = serializers.CharField(required=False, error_messages=ErrMessage.char("应用描述"))
+        desc = serializers.CharField(required=False, error_messages=ErrMessage.char("Application Description"))
 
         user_id = serializers.UUIDField(required=True, error_messages=ErrMessage.uuid("用户id"))
 
@@ -401,7 +401,7 @@ class ApplicationSerializer(serializers.Serializer):
             query_set_dict['team_member_permission_custom_sql'] = QuerySet(model=get_dynamics_model(
                 {'user_id': models.CharField(),
                  'team_member_permission.auth_target_type': models.CharField(),
-                 'team_member_permission.operate': ArrayField(verbose_name="权限操作列表",
+                 'team_member_permission.operate': ArrayField(verbose_name="Permission Operation List",
                                                               base_field=models.CharField(max_length=256,
                                                                                           blank=True,
                                                                                           choices=AuthOperate.choices,

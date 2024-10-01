@@ -18,8 +18,8 @@ django.setup()
 
 def collect_static():
     """
-     收集静态文件到指定目录
-     本项目主要是将前端vue/dist的前端项目放到静态目录下面
+     Collect static files to the specified directory
+     This project mainly puts the front-end vue/dist project into the static directory
     :return:
     """
     logging.info("Collect static files")
@@ -32,7 +32,7 @@ def collect_static():
 
 def perform_db_migrate():
     """
-    初始化数据库表
+    Initialize database tables
     """
     logging.info("Check database structure change ...")
     logging.info("Migrate model change to database ...")

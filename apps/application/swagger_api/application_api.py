@@ -45,7 +45,7 @@ class ApplicationApi(ApiMixin):
             properties={
                 'id': openapi.Schema(type=openapi.TYPE_STRING, title="", description="主键id"),
                 'name': openapi.Schema(type=openapi.TYPE_STRING, title="应用名称", description="应用名称"),
-                'desc': openapi.Schema(type=openapi.TYPE_STRING, title="应用描述", description="应用描述"),
+                'desc': openapi.Schema(type=openapi.TYPE_STRING, title="Application Description", description="Application Description"),
                 'model_id': openapi.Schema(type=openapi.TYPE_STRING, title="模型id", description="模型id"),
                 "multiple_rounds_dialogue": openapi.Schema(type=openapi.TYPE_BOOLEAN, title="是否开启多轮对话",
                                                            description="是否开启多轮对话"),
@@ -148,7 +148,7 @@ class ApplicationApi(ApiMixin):
                 required=[],
                 properties={
                     'name': openapi.Schema(type=openapi.TYPE_STRING, title="应用名称", description="应用名称"),
-                    'desc': openapi.Schema(type=openapi.TYPE_STRING, title="应用描述", description="应用描述"),
+                    'desc': openapi.Schema(type=openapi.TYPE_STRING, title="Application Description", description="Application Description"),
                     'model_id': openapi.Schema(type=openapi.TYPE_STRING, title="模型id", description="模型id"),
                     "multiple_rounds_dialogue": openapi.Schema(type=openapi.TYPE_BOOLEAN, title="是否开启多轮对话",
                                                                description="是否开启多轮对话"),
@@ -228,7 +228,7 @@ class ApplicationApi(ApiMixin):
                           'problem_optimization'],
                 properties={
                     'name': openapi.Schema(type=openapi.TYPE_STRING, title="应用名称", description="应用名称"),
-                    'desc': openapi.Schema(type=openapi.TYPE_STRING, title="应用描述", description="应用描述"),
+                    'desc': openapi.Schema(type=openapi.TYPE_STRING, title="Application Description", description="Application Description"),
                     'model_id': openapi.Schema(type=openapi.TYPE_STRING, title="模型id", description="模型id"),
                     "multiple_rounds_dialogue": openapi.Schema(type=openapi.TYPE_BOOLEAN, title="是否开启多轮对话",
                                                                description="是否开启多轮对话"),
@@ -256,7 +256,7 @@ class ApplicationApi(ApiMixin):
                                       in_=openapi.IN_QUERY,
                                       type=openapi.TYPE_STRING,
                                       required=False,
-                                      description='应用描述')
+                                      description='Application Description')
                     ]
 
     class Operate(ApiMixin):

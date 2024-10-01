@@ -32,7 +32,7 @@ const settingRouter = {
       meta: {
         icon: 'User',
         iconActive: 'UserFilled',
-        title: '用户管理',
+        title: 'User Management',
         activeMenu: '/setting',
         parentPath: '/setting',
         parentName: 'setting',

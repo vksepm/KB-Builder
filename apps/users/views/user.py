@@ -1,7 +1,7 @@
 # coding=utf-8
 """
     @project: qabot
-    @Author：虎
+    @Author：Tiger
     @file： user.py
     @date：2023/9/4 10:57
     @desc:
@@ -209,7 +209,7 @@ class UserManage(APIView):
                          operation_id="添加用户",
                          request_body=UserManageSerializer.UserInstance.get_request_body_api(),
                          responses=result.get_api_response(UserInstanceSerializer.get_response_body_api()),
-                         tags=["用户管理"]
+                         tags=["User Management"]
                          )
     @has_permissions(ViewPermission(
         [RoleConstants.ADMIN],
@@ -224,7 +224,7 @@ class UserManage(APIView):
         @action(methods=['GET'], detail=False)
         @swagger_auto_schema(operation_summary="获取用户分页列表",
                              operation_id="获取用户分页列表",
-                             tags=["用户管理"],
+                             tags=["User Management"],
                              manual_parameters=UserManageSerializer.Query.get_request_params_api(),
                              responses=result.get_page_api_response(UserInstanceSerializer.get_response_body_api()),
                              )
@@ -247,7 +247,7 @@ class UserManage(APIView):
                              manual_parameters=UserInstanceSerializer.get_request_params_api(),
                              request_body=UserManageSerializer.RePasswordInstance.get_request_body_api(),
                              responses=result.get_default_response(),
-                             tags=["用户管理"])
+                             tags=["User Management"])
         @has_permissions(ViewPermission(
             [RoleConstants.ADMIN],
             [PermissionConstants.USER_READ],
@@ -260,11 +260,11 @@ class UserManage(APIView):
         authentication_classes = [TokenAuth]
 
         @action(methods=['DELETE'], detail=False)
-        @swagger_auto_schema(operation_summary="删除用户",
-                             operation_id="删除用户",
+        @swagger_auto_schema(operation_summary="Deleting a User",
+                             operation_id="Deleting a User",
                              manual_parameters=UserInstanceSerializer.get_request_params_api(),
                              responses=result.get_default_response(),
-                             tags=["用户管理"])
+                             tags=["User Management"])
         @has_permissions(ViewPermission(
             [RoleConstants.ADMIN],
             [PermissionConstants.USER_READ],
@@ -273,11 +273,11 @@ class UserManage(APIView):
             return result.success(UserManageSerializer.Operate(data={'id': user_id}).delete(with_valid=True))
 
         @action(methods=['GET'], detail=False)
-        @swagger_auto_schema(operation_summary="获取用户信息",
-                             operation_id="获取用户信息",
+        @swagger_auto_schema(operation_summary="Get user information",
+                             operation_id="Get user information",
                              manual_parameters=UserInstanceSerializer.get_request_params_api(),
                              responses=result.get_api_response(UserInstanceSerializer.get_response_body_api()),
-                             tags=["用户管理"]
+                             tags=["User Management"]
                              )
         @has_permissions(ViewPermission(
             [RoleConstants.ADMIN],
@@ -287,12 +287,12 @@ class UserManage(APIView):
             return result.success(UserManageSerializer.Operate(data={'id': user_id}).one(with_valid=True))
 
         @action(methods=['PUT'], detail=False)
-        @swagger_auto_schema(operation_summary="修改用户信息",
-                             operation_id="修改用户信息",
+        @swagger_auto_schema(operation_summary="Modify user information",
+                             operation_id="Modify user information",
                              manual_parameters=UserInstanceSerializer.get_request_params_api(),
                              request_body=UserManageSerializer.UserEditInstance.get_request_body_api(),
                              responses=result.get_api_response(UserInstanceSerializer.get_response_body_api()),
-                             tags=["用户管理"]
+                             tags=["User Management"]
                              )
         @has_permissions(ViewPermission(
             [RoleConstants.ADMIN],

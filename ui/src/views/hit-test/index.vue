@@ -153,7 +153,7 @@
         </el-row>
 
         <div class="text-right">
-          <el-button @click="popoverVisible = false">取消</el-button>
+          <el-button @click="popoverVisible = false">Cancel</el-button>
           <el-button type="primary" @click="settingChange('close')">确认</el-button>
         </div>
       </el-popover>

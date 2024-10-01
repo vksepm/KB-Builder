@@ -59,7 +59,7 @@
     </el-form>
     <template #footer>
       <span class="dialog-footer">
-        <el-button @click.prevent="dialogVisible = false"> 取消 </el-button>
+        <el-button @click.prevent="dialogVisible = false"> Cancel </el-button>
 <!--        <el-button type="primary" @click="submitForm(formRef)" :loading="loading"> 迁移 </el-button>-->
       </span>
     </template>

@@ -32,7 +32,7 @@ export default {
                 getVerificationCode: "获取验证码",
                 verificationCodeSentSuccess:"验证码发送成功",
                 resend:"重新发送",
-                cancel:"取消",
+                cancel:"Cancel",
                 save:"保存",
             }
         }

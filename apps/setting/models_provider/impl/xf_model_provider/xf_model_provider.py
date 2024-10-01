@@ -1,7 +1,7 @@
 # coding=utf-8
 """
     @project: maxkb
-    @Author：虎
+    @Author：Tiger
     @file： xf_model_provider.py
     @date：2024/04/19 14:47
     @desc:

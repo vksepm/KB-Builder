@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="create-dataset__footer text-right border-t" v-if="active !== 2">
-      <el-button @click="router.go(-1)" :disabled="loading">取消</el-button>
+      <el-button @click="router.go(-1)" :disabled="loading">Cancel</el-button>
       <el-button @click="prev" v-if="active === 1" :disabled="loading">上一步</el-button>
       <el-button
         @click="next"
@@ -115,7 +115,7 @@ function submit() {
     document
       .asyncPostDocument(id as string, documents)
       .then(() => {
-        MsgSuccess('提交成功')
+        MsgSuccess('Submit successfully')
         clearStore()
         router.push({ path: `/dataset/${id}/document` })
       })

@@ -133,7 +133,7 @@ async function deleteDataset(row:any) {
     await datasetApi.delDataset(row.id, loading);  
     const index = datasetList.value.findIndex(v => v.id === row.id);  
     datasetList.value.splice(index, 1);  
-    MsgSuccess('删除成功');  
+    MsgSuccess('Deleted successfully');  
   } catch (error) {  
     // 捕获并处理所有异步操作中的错误  
     console.error('删除失败', error);  

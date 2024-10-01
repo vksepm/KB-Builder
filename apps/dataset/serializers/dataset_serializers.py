@@ -1,7 +1,7 @@
 # coding=utf-8
 """
     @project: maxkb
-    @Author：虎
+    @Author：Tiger
     @file： dataset_serializers.py
     @date：2023/9/21 16:14
     @desc:
@@ -180,7 +180,7 @@ class DataSetSerializers(serializers.ModelSerializer):
             query_set_dict['team_member_permission_custom_sql'] = QuerySet(model=get_dynamics_model(
                 {'user_id': models.CharField(),
                  'team_member_permission.auth_target_type': models.CharField(),
-                 'team_member_permission.operate': ArrayField(verbose_name="权限操作列表",
+                 'team_member_permission.operate': ArrayField(verbose_name="Permission Operation List",
                                                               base_field=models.CharField(max_length=256,
                                                                                           blank=True,
                                                                                           choices=AuthOperate.choices,
@@ -765,7 +765,7 @@ class DataSetSerializers(serializers.ModelSerializer):
                               ), 'team_member_permission_custom_sql': QuerySet(
                     model=get_dynamics_model({'user_id': models.CharField(),
                                               'team_member_permission.operate': ArrayField(
-                                                  verbose_name="权限操作列表",
+                                                  verbose_name="Permission Operation List",
                                                   base_field=models.CharField(max_length=256,
                                                                               blank=True,
                                                                               choices=AuthOperate.choices,

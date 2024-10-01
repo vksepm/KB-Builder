@@ -1,5 +1,5 @@
 <template>
-  <el-dialog title="修改用户密码" v-model="dialogVisible">
+  <el-dialog title="Change User Password" v-model="dialogVisible">
     <el-form
       ref="userFormRef"
       :model="userForm"
@@ -8,20 +8,20 @@
       require-asterisk-position="right"
       @submit.prevent
     >
-      <el-form-item label="新密码" prop="password">
+      <el-form-item label="New Password" prop="password">
         <el-input
           type="password"
           v-model="userForm.password"
-          placeholder="请输入新密码"
+          placeholder="Please enter new password"
           show-password
         >
         </el-input>
       </el-form-item>
-      <el-form-item label="确认密码" prop="re_password">
+      <el-form-item label="Confirm Password" prop="re_password">
         <el-input
           type="password"
           v-model="userForm.re_password"
-          placeholder="请输入确认密码"
+          placeholder="Please enter the confirmation password"
           show-password
         >
         </el-input>
@@ -29,8 +29,8 @@
     </el-form>
     <template #footer>
       <span class="dialog-footer">
-        <el-button @click.prevent="dialogVisible = false"> 取消 </el-button>
-        <el-button type="primary" @click="submit(userFormRef)" :loading="loading"> 保存 </el-button>
+        <el-button @click.prevent="dialogVisible = false"> Cancel </el-button>
+        <el-button type="primary" @click="submit(userFormRef)" :loading="loading"> keep </el-button>
       </span>
     </template>
   </el-dialog>
@@ -54,32 +54,32 @@ const rules = reactive<FormRules<ResetPasswordRequest>>({
   password: [
     {
       required: true,
-      message: '请输入新密码',
+      message: 'Please enter new password',
       trigger: 'blur'
     },
     {
       min: 6,
       max: 20,
-      message: '长度在 6 到 20 个字符',
+      message: 'Length between 6 and 20 characters',
       trigger: 'blur'
     }
   ],
   re_password: [
     {
       required: true,
-      message: '请输入确认密码',
+      message: 'Please enter the confirmation password',
       trigger: 'blur'
     },
     {
       min: 6,
       max: 20,
-      message: '长度在 6 到 20 个字符',
+      message: 'Length between 6 and 20 characters',
       trigger: 'blur'
     },
     {
       validator: (rule, value, callback) => {
         if (userFormRef.value.password != userFormRef.value.re_password) {
-          callback(new Error('密码不一致'))
+          callback(new Error('Passwords do not match'))
         } else {
           callback()
         }
@@ -113,7 +113,7 @@ const submit = async (formEl: FormInstance | undefined) => {
     if (valid) {
       userApi.putUserManagePassword(userId.value, userForm.value, loading).then((res) => {
         emit('refresh')
-        MsgSuccess('修改用户密码成功')
+        MsgSuccess('User password modified successfully')
         dialogVisible.value = false
       })
     }

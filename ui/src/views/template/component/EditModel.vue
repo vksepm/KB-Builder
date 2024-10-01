@@ -113,7 +113,7 @@
     </DynamicsForm>
     <template #footer>
       <span class="dialog-footer">
-        <el-button @click="close">取消</el-button>
+        <el-button @click="close">Cancel</el-button>
         <el-button type="primary" @click="submit" :loading="loading"> 修改 </el-button>
       </span>
     </template>

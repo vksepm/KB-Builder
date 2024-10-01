@@ -85,7 +85,7 @@ function deleteApiKey(row: any) {
   )
     .then(() => {
       overviewApi.delAPIKey(id as string, row.id, loading).then(() => {
-        MsgSuccess('删除成功')
+        MsgSuccess('Deleted successfully')
         getApiKeyList()
       })
     })

@@ -9,7 +9,7 @@
               size="large"
               class="input-item"
               v-model="registerForm.username"
-              placeholder="请输入用户名"
+              placeholder="Please enter your username"
             >
             </el-input>
           </el-form-item>
@@ -110,7 +110,7 @@ const rules = ref<FormRules<RegisterRequest>>({
   username: [
     {
       required: true,
-      message: '请输入用户名',
+      message: 'Please enter your username',
       trigger: 'blur'
     },
     {

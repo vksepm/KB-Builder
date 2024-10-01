@@ -11,7 +11,7 @@
       <el-form-item :prop="isEdit ? '' : 'username'" label="用户名">
         <el-input
           v-model="userForm.username"
-          placeholder="请输入用户名"
+          placeholder="Please enter your username"
           maxlength="20"
           show-word-limit
           :disabled="isEdit"
@@ -45,7 +45,7 @@
     </el-form>
     <template #footer>
       <span class="dialog-footer">
-        <el-button @click.prevent="dialogVisible = false"> 取消 </el-button>
+        <el-button @click.prevent="dialogVisible = false"> Cancel </el-button>
         <el-button type="primary" @click="submit(userFormRef)" :loading="loading"> 保存 </el-button>
       </span>
     </template>
@@ -74,7 +74,7 @@ const userForm = ref<any>({
 
 const rules = reactive({
   username: [
-    { required: true, message: '请输入用户名', trigger: 'blur' },
+    { required: true, message: 'Please enter your username', trigger: 'blur' },
     {
       min: 6,
       max: 20,

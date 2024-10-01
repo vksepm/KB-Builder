@@ -1,7 +1,7 @@
 # coding=utf-8
 """
     @project: maxkb
-    @Author：虎
+    @Author：Tiger
     @file： dataset.py
     @date：2023/9/21 15:52
     @desc:

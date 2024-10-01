@@ -101,7 +101,7 @@ class Config(dict):
         return self.get('DEBUG') if 'DEBUG' in self else True
 
     def get_time_zone(self) -> str:
-        return self.get('TIME_ZONE') if 'TIME_ZONE' in self else 'Asia/Shanghai'
+        return self.get('TIME_ZONE') if 'TIME_ZONE' in self else 'America/Toronto'
 
     def get_db_setting(self) -> dict:
         return {

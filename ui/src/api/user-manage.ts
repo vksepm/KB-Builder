@@ -27,7 +27,7 @@ const getUserManage: (
 }
 
 /**
- * 删除用户
+ * Deleting a User
  * @param 参数 user_id,
  */
 const delUserManage: (user_id: string, loading?: Ref<boolean>) => Promise<Result<boolean>> = (

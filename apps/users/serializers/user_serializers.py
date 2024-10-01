@@ -1,7 +1,7 @@
 # coding=utf-8
 """
     @project: qabot
-    @Author：虎
+    @Author：Tiger
     @file： team_serializers.py
     @date：2023/9/5 16:32
     @desc:
@@ -703,7 +703,7 @@ class UserManageSerializer(serializers.Serializer):
         def is_valid(self, *, raise_exception=False):
             super().is_valid(raise_exception=True)
             if not QuerySet(User).filter(id=self.data.get('id')).exists():
-                raise AppApiException(1004, "用户不存在")
+                raise AppApiException(1004, "User does not exist")
 
         @transaction.atomic
         def delete(self, with_valid=True):
@@ -711,18 +711,18 @@ class UserManageSerializer(serializers.Serializer):
                 self.is_valid(raise_exception=True)
                 user = QuerySet(User).filter(id=self.data.get('id')).first()
                 if user.role == RoleConstants.ADMIN.name:
-                    raise AppApiException(1004, "无法删除管理员")
+                    raise AppApiException(1004, "Unable to delete administrator")
             user_id = self.data.get('id')
 
             team_member_list = QuerySet(TeamMember).filter(Q(user_id=user_id) | Q(team_id=user_id))
-            # 删除团队成员权限
+            # Remove team member permissions
             QuerySet(TeamMemberPermission).filter(
                 member_id__in=[team_member.id for team_member in team_member_list]).delete()
-            # 删除团队成员
+            # Deleting a team member
             team_member_list.delete()
-            # 删除应用相关 因为应用相关都是级联删除所以不需要手动删除
+            # Delete application related information. Because application related information is cascade deleted, there is no need to delete it manually.
             QuerySet(Application).filter(user_id=self.data.get('id')).delete()
-            # 删除数据集相关
+            # Delete data set related
             dataset_list = QuerySet(DataSet).filter(user_id=self.data.get('id'))
             dataset_id_list = [str(dataset.id) for dataset in dataset_list]
             QuerySet(Document).filter(dataset_id__in=dataset_id_list).delete()
@@ -735,7 +735,7 @@ class UserManageSerializer(serializers.Serializer):
             QuerySet(Team).filter(user_id=self.data.get('id')).delete()
             # 删除模型
             QuerySet(Model).filter(user_id=self.data.get('id')).delete()
-            # 删除用户
+            # Deleting a User
             QuerySet(User).filter(id=self.data.get('id')).delete()
             return True
 
@@ -748,7 +748,7 @@ class UserManageSerializer(serializers.Serializer):
             user = QuerySet(User).filter(id=self.data.get('id')).first()
             if user.role == RoleConstants.ADMIN.name and 'is_active' in instance and instance.get(
                     'is_active') is not None:
-                raise AppApiException(1004, "不能修改管理员状态")
+                raise AppApiException(1004, "Cannot modify administrator status")
             update_keys = ['email', 'nick_name', 'phone', 'is_active']
             for update_key in update_keys:
                 if update_key in instance and instance.get(update_key) is not None:

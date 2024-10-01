@@ -3,42 +3,40 @@
   <img width="60%" alt="image" src="https://github.com/user-attachments/assets/7af61641-e548-459f-b377-c71c1810e38f">
 </p>
 
-# <p align="center"><span style="font-size:20px;">基于 LLM 大语言模型的知识库生成系统</span></p>
+# <p align="center"><span style="font-size:20px;">Knowledge base generation system based on LLM large language model</span></p>
 
 
-KB Builder = Knowledge Base Builder，是一款基于 LLM 大语言模型的开源知识库生成系统。
-基于RAG（Retrieval-Augmented Generation）数据生成增强方法，为用户提供基于RAG的知识增强生成和知识库快速构建能力，致力于成为企业的知识构建中枢。
-提供平台化智能对话服务能力，提供文档知识库管理功能，支持用户上传docx、pdf、txt、md格式的文档；用户点击“解析文档”可调用大模型生成问答对数据，筛选生成高质量的知识库问答对数据。  
+KB Builder = Knowledge Base Builder is an open source knowledge base generation system based on the LLM large language model. Based on the RAG (Retrieval-Augmented Generation) data generation enhancement method, it provides users with RAG-based knowledge enhancement generation and knowledge base rapid construction capabilities, and is committed to becoming the knowledge construction center of the enterprise. It provides platform-based intelligent dialogue service capabilities, document knowledge base management functions, and supports users to upload documents in docx, pdf, txt, and md formats; users click "Parse Document" to call the large model to generate question-answer data, and filter and generate high-quality knowledge base question-answer data.
 
-- **文件类型支持广泛**：支持直接上传docx、txt、markdown、pdf格式文档、后续将支持更多文本格式文件；
-- **灵活的文档处理方式**：提供多种文档切片（智能分段 / 递归拆分 / 自定义标识拆分等）和多种文本清洗等RAG文档预处理方式；
-- **大语言模型中立**：支持对接各种大语言模型来生成QA，包括本地私有大模型（Llama 3 / Qwen 2 等）、国内公共大模型（通义千问 / 智谱 AI 等）和国外公共大模型（OpenAI / Gemini 等）；
-- **知识生成与管理**：提供多个预置场景Prompt库，支持生成高质量的QA问答对，支持基于QA的知识库生成功能，后续将提供更多的重写增强结构化处理等知识库管理能力。
+- **Wide support for file types**：Supports direct upload of docx, txt, markdown, and pdf format documents, and will support more text format files in the future;
+- **Flexible document processing methods**：Provides multiple document slicing (intelligent segmentation/recursive splitting/custom logo splitting, etc.) and multiple text cleaning and other RAG document preprocessing methods;
+- **Large language model neutrality**：Supports docking with various large language models to generate QA, including local private large models (Llama 3 / Qwen 2, etc.), domestic public large models (Tongyi Qianwen / Zhipu AI, etc.) and foreign public large models (OpenAI / Gemini, etc.);
+- **Knowledge generation and management**：It provides multiple preset scenario prompt libraries, supports the generation of high-quality QA question-answer pairs, and supports QA-based knowledge base generation functions. More knowledge base management capabilities such as rewriting and enhanced structured processing will be provided in the future.
   
-## 快速开始
+## Quick Start
 
-### 阿里云镜像一键部署  
+### Alibaba Cloud image one-click deployment
 ```
 docker run -d --name kb-builder -p 8080:8088 -v ~/.KB-builder:/var/lib/postgresql/data registry.cn-hangzhou.aliyuncs.com/hduchat/bindian.hdu.edu.cn:latest 
-用户名: admin
-密码: admin123.
+username: admin
+password: admin123.
 ```
 
-### DockerHub镜像一键部署   
+### One-click deployment of DockerHub images
 ```
 docker run -d --name kb_builder -p 8080:8088 -v ~/.kb-builder:/var/lib/postgresql/data hduchat/bindian.hdu.edu.cn
-用户名: admin
-密码: admin123.
+username: admin
+password: admin123.
 ```
 
-💡 可以通过源码进行安装部署
+💡 Can be installed and deployed via source code
 
-如你有更多问题，可以查看使用手册，或者通过issue，也欢迎加入微信群和我们交流。
-- [使用手册](https://github.com/hduchat/KB-Builder/wiki/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D)
-- [建议反馈](https://github.com/hduchat/KB-Builder/issues)
-- [技术交流群](https://github.com/hduchat/KB-Builder/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC)
+If you have more questions, you can check the manual, or report them through issue. You are also welcome to join the WeChat group to communicate with us
+- [User Manual](https://github.com/hduchat/KB-Builder/wiki/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D)
+- [Suggestions and feedback](https://github.com/hduchat/KB-Builder/issues)
+- [Technical exchange group](https://github.com/hduchat/KB-Builder/wiki/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC)
 
-## UI 展示
+## UI Display
 
 <table style="border-collapse: collapse; border: 1px solid black;">
   <tr>
@@ -52,30 +50,30 @@ docker run -d --name kb_builder -p 8080:8088 -v ~/.kb-builder:/var/lib/postgresq
 </table>
 
 
-## 技术栈
-- 前端：[Vue.js](https://cn.vuejs.org/)
-- 后端：[Python / Django](https://www.djangoproject.com/)
+## Technology Stack
+- Frontend：[Vue.js](https://cn.vuejs.org/)
+- Backend：[Python / Django](https://www.djangoproject.com/)
 - LangChain：[LangChain](https://www.langchain.com/)
-- 向量数据库：[PostgreSQL / pgvector](https://www.postgresql.org/)
-- 大模型：各种本地私有或者公共大模型
+- Vector database：[PostgreSQL / pgvector](https://www.postgresql.org/)
+- Large models: various local private or public large models
 
-## 微信加入KB-Builder交流群
+## Join the KB-Builder discussion group on WeChat
 <p align="left">
     <img width="30%" alt="image" src="https://github.com/user-attachments/assets/440c070e-88c2-466f-9497-3e30120f32d3">
 </p>
     
-## 滨电智言
-**本项目是由杭州电子科技大学滨江研究院开发完成。**  
+## Hamaden Chiyan
+**This project was developed by Binjiang Research Institute of Hangzhou Dianzi University.**  
 
-滨电智言是由杭州电子科技大学滨江研究院自主开发完成的面向行业细分领域的大模型产品。滨电智言强化了领域知识提取与知识构建、领域模型训练与微调、知识检索与语义匹配等能力。目前滨电智言初步构建了面向能源工业、科技教育、医疗健康垂直领域的底层模型能力，支持包括智能问答、领域内容生成、文本摘要、报告生成、数据分析等多项大模型应用能力。  
+Bindian Zhiyan is a large model product for industry segments independently developed by Binjiang Research Institute of Hangzhou Dianzi University. Bindian Zhiyan strengthens the capabilities of domain knowledge extraction and knowledge construction, domain model training and fine-tuning, knowledge retrieval and semantic matching. At present, Bindian Zhiyan has initially built the underlying model capabilities for the vertical fields of energy industry, science and technology education, and medical health, supporting multiple large model application capabilities including intelligent question and answer, domain content generation, text summarization, report generation, data analysis, etc.
 
-滨电智言自2023年8月31日正式发布以来，得到腾讯网、搜狐网、杭州网和潮新闻等多家新闻媒体报道，正在和多个客户合作构建垂直行业领域大模型，力争建成高质量产学研结合垂直行业行业领域大模型，为客户打造您企业专属的行业领域大模型智能综合解决方案。
+Since its official release on August 31, 2023, Bindian Zhiyan has been reported by many news media such as Tencent, Sohu, Hangzhou and Chao News. It is working with multiple customers to build vertical industry big models, striving to build high-quality industry-university-research integration vertical industry big models, and create an intelligent comprehensive solution for your company's exclusive industry big model.
 
-## 特别鸣谢
-感谢飞致云[MaxKB](https://github.com/1Panel-dev/MaxKB)项目提供的技术支持！  
+## Special thanks
+Thanks to Feizhiyun [MaxKB](https://github.com/1Panel-dev/MaxKB)project for providing technical support!
 
 ## License  
-Copyright (c) 2014-2024 滨电智言 , All rights reserved.  
+Copyright (c) 2014-2024 Bindian Zhiyan, All rights reserved.
 
 Licensed under The GNU General Public License version 3 (GPLv3)  (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 

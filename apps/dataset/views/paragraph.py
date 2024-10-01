@@ -1,7 +1,7 @@
 # coding=utf-8
 """
     @project: maxkb
-    @Author：虎
+    @Author：Tiger
     @file： paragraph_serializers.py
     @date：2023/10/16 15:51
     @desc:

@@ -26,7 +26,7 @@
     <p class="danger">注意：所有同步都会删除已有数据重新获取新数据，请谨慎操作。</p>
     <template #footer>
       <span class="dialog-footer">
-        <el-button @click.prevent="dialogVisible = false"> 取消 </el-button>
+        <el-button @click.prevent="dialogVisible = false"> Cancel </el-button>
         <el-button type="primary" @click="submit" :loading="loading"> 确定 </el-button>
       </span>
     </template>

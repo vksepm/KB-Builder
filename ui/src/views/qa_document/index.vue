@@ -450,7 +450,7 @@ function deleteDocument(row: any) {
   )
     .then(() => {
       documentApi.delDocument(child_id.value, row.id, loading).then(() => {
-        MsgSuccess('删除成功')
+        MsgSuccess('Deleted successfully')
         getList()
       })
     })

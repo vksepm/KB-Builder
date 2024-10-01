@@ -2,7 +2,7 @@
 name = "kb_builder"
 authors = ["sixuanwang <sixuan@hdu.edu.cn>"]
 version = "0.1.0"
-description = "智能知识库"
+description = "Intelligent Knowledge Base"
 readme = "README.md"
 
 [tool.poetry.dependencies]

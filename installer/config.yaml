@@ -1,4 +1,4 @@
-# 邮箱配置
+# Mailbox Configuration
 EMAIL_ADDRESS: ${EMAIL_ADDRESS}
 EMAIL_USE_TLS: ${EMAIL_USE_TLS}
 EMAIL_USE_SSL: ${EMAIL_USE_SSL}
@@ -7,7 +7,7 @@ EMAIL_PORT: ${EMAIL_PORT}
 EMAIL_HOST_USER: ${EMAIL_HOST_USER}
 EMAIL_HOST_PASSWORD: ${EMAIL_HOST_PASSWORD}
 
-# 数据库链接信息
+# Database connection information
 DB_NAME: maxkb
 DB_HOST: 127.0.0.1
 DB_PORT: 5432

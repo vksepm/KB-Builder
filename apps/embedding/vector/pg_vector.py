@@ -1,7 +1,7 @@
 # coding=utf-8
 """
     @project: maxkb
-    @Author：虎
+    @Author：Tiger
     @file： pg_vector.py
     @date：2023/10/19 15:28
     @desc:

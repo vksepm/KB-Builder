@@ -604,10 +604,10 @@ class DocumentSerializers(ApiMixin, serializers.Serializer):
             "文件列表"))
 
         limit = serializers.IntegerField(required=False, error_messages=ErrMessage.integer(
-            "分段长度"))
+            "Segment length"))
 
         overlap = serializers.IntegerField(required=False, error_messages=ErrMessage.integer(
-            "分段重叠"))
+            "Segment overlap"))
 
         patterns = serializers.ListField(required=False,
                                          child=serializers.CharField(required=True, error_messages=ErrMessage.char(
@@ -641,24 +641,24 @@ class DocumentSerializers(ApiMixin, serializers.Serializer):
                 openapi.Parameter(name='limit',
                                   in_=openapi.IN_FORM,
                                   required=False,
-                                  type=openapi.TYPE_INTEGER, title="分段长度", description="分段长度"),
+                                  type=openapi.TYPE_INTEGER, title="Segment length", description="Segment length"),
                 openapi.Parameter(name='overlap',
                                   in_=openapi.IN_FORM,
                                   required=False,
-                                  type=openapi.TYPE_INTEGER, title="分段重叠", description="分段重叠"),
+                                  type=openapi.TYPE_INTEGER, title="Segment overlap", description="Segment overlap"),
                 openapi.Parameter(name='patterns',
                                   in_=openapi.IN_FORM,
                                   required=False,
                                   type=openapi.TYPE_ARRAY, items=openapi.Items(type=openapi.TYPE_STRING),
-                                  title="分段正则列表", description="分段正则列表"),
+                                  title="Segmented regular list", description="Segmented regular list"),
                 openapi.Parameter(name='with_filter',
                                   in_=openapi.IN_FORM,
                                   required=False,
-                                  type=openapi.TYPE_BOOLEAN, title="是否清除特殊字符", description="是否清除特殊字符"),
+                                  type=openapi.TYPE_BOOLEAN, title="Whether to clear special characters", description="Whether to clear special characters"),
                 openapi.Parameter(name='use_ocr',
                                   in_=openapi.IN_FORM,
                                   required=False,
-                                  type=openapi.TYPE_BOOLEAN, title="是否使用ocr", description="是否使用ocr"),
+                                  type=openapi.TYPE_BOOLEAN, title="Whether to use OCR", description="Whether to use OCR"),
             ]
 
         def parse(self):

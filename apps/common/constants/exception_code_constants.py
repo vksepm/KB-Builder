@@ -27,7 +27,7 @@ class ExceptionCodeConstantsValue:
 
 
 class ExceptionCodeConstants(Enum):
-    INCORRECT_USERNAME_AND_PASSWORD = ExceptionCodeConstantsValue(1000, "用户名或者密码不正确")
+    INCORRECT_USERNAME_AND_PASSWORD = ExceptionCodeConstantsValue(1000, "Incorrect username or password")
     NOT_AUTHENTICATION = ExceptionCodeConstantsValue(1001, "请先登录,并携带用户Token")
     EMAIL_SEND_ERROR = ExceptionCodeConstantsValue(1002, "邮件发送失败")
     EMAIL_FORMAT_ERROR = ExceptionCodeConstantsValue(1003, "邮箱格式错误")

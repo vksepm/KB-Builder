@@ -24,11 +24,11 @@
                   <el-card v-if="radio === '2'" shadow="never" class="card-never mt-16" style="margin-left: 30px">
                     <div class="set-rules__form">
                       <div class="form-item mb-16">
-                        <div class="title mb-8">分段长度</div>
+                        <div class="title mb-8">Segment length</div>
                         <el-slider v-model="form.limit" show-input :show-input-controls="false" :min="256" :max="2048" />
                       </div>
                       <div class="form-item mb-16">
-                        <div class="title mb-8">分段重叠</div>
+                        <div class="title mb-8">Segment overlap</div>
                         <el-slider v-model="form.overlap" show-input :show-input-controls="false" :min="128" :max="512" />
                       </div>
                       <div class="form-item mb-16">
@@ -68,7 +68,7 @@
                         </div>
                       </div>
                       <div class="form-item mb-16">
-                        <div class="title mb-8">分段长度</div>
+                        <div class="title mb-8">Segment length</div>
                         <el-slider v-model="form.limit" show-input :show-input-controls="false" :min="256" :max="2048" />
                       </div>
                       <div class="form-item mb-16">

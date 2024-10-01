@@ -40,19 +40,19 @@ If you have more questions, you can check the manual, or report them through iss
 
 <table style="border-collapse: collapse; border: 1px solid black;">
   <tr>
-    <td width="50%";style="padding: 5px;background-color:#fff;"><img src= "https://github.com/user-attachments/assets/8516ef95-6cc7-4769-8fde-fee135e4bab5" alt=" Demo1"   /></td>
-    <td width="50%";style="padding: 5px;background-color:#fff;"><img src= "https://github.com/user-attachments/assets/9aaabd11-7550-4245-b297-8156b7a28ce0" alt=" Demo2"   /></td>
+    <td width="50%";style="padding: 5px;background-color:#fff;"><img src= "https://github.com/user-attachments/assets/b3398aea-cf1c-4d00-be15-4b55fd83ce37" alt=" Demo1"   /></td>
+    <td width="50%";style="padding: 5px;background-color:#fff;"><img src= "https://github.com/user-attachments/assets/a569fbcb-6ac3-408a-8a0f-6782505eca57" alt=" Demo2"   /></td>
   </tr>
   <tr>
-    <td width="50%";style="padding: 5px;background-color:#fff;"><img src= "https://github.com/user-attachments/assets/c0e3ada2-58ff-4aa0-92ef-88b66bea6fe8" alt=" Demo3"   /></td>
-    <td width="50%";style="padding: 5px;background-color:#fff;"><img src= "https://github.com/user-attachments/assets/cedb669f-55df-4153-b45f-eeedb87768e5" alt=" Demo4"   /></td>
+    <td width="50%";style="padding: 5px;background-color:#fff;"><img src= "https://github.com/user-attachments/assets/7cdcbe66-1dd6-4015-8abe-84d03e9c99bc" alt=" Demo3"   /></td>
+    <td width="50%";style="padding: 5px;background-color:#fff;"><img src= "https://github.com/user-attachments/assets/3346e046-b3ed-471a-848c-c9242f93ac83" alt=" Demo4"   /></td>
   </tr>
 </table>
 
-
 ## Technology Stack
 - Frontend：[Vue.js](https://cn.vuejs.org/)
-- Backend：[Python / Django](https://www.djangoproject.com/)
+- Backend：[Python / Django](https://www.djangoproject.com/)![Uploading image-2.png…]()
+
 - LangChain：[LangChain](https://www.langchain.com/)
 - Vector database：[PostgreSQL / pgvector](https://www.postgresql.org/)
 - Large models: various local private or public large models

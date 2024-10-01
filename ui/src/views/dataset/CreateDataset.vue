@@ -1,5 +1,5 @@
 <template>
-  <LayoutContainer :header="isCreate ? '创建问答库' : '上传文档'" class="create-dataset">
+  <LayoutContainer :header="isCreate ? 'Create a Q&A library' : 'Upload Documents'" class="create-dataset">
     <template #backButton>
       <back-button @click="back"></back-button>
     </template>
@@ -25,10 +25,10 @@
         v-if="active === 0"
         :disabled="loading || StepFirstRef?.loading"
       >
-        创建并导入
+        Create and import
       </el-button>
       <el-button @click="submit" type="primary" v-if="active === 1" :disabled="loading">
-        开始导入
+        Start importing
       </el-button>
     </div>
   </LayoutContainer>
@@ -133,8 +133,8 @@ function submit() {
 
 function back() {
   if (baseInfo.value || webInfo.value || documentsFiles.value?.length > 0) {
-    MsgConfirm(`提示`, `当前的更改尚未保存，确认退出吗?`, {
-      confirmButtonText: '确认',
+    MsgConfirm(`提示`, `The current changes have not been saved, are you sure you want to exit?`, {
+      confirmButtonText: 'Confirm',
       type: 'warning'
     })
       .then(() => {

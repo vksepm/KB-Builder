@@ -90,11 +90,11 @@ class ListenerManagement:
     @embedding_poxy
     def embedding_by_paragraph(paragraph_id):
         """
-        向量化段落 根据段落id
-        :param paragraph_id: 段落id
+        Vectorize Paragraphs By Paragraphid
+        :param paragraph_id: paragraph_id
         :return: None
         """
-        kb_builder.info(f"开始--->向量化段落:{paragraph_id}")
+        kb_builder.info(f"Start--->Vectorize paragraph:{paragraph_id}")
         status = Status.success
         try:
             data_list = native_search(
@@ -103,26 +103,26 @@ class ListenerManagement:
                     'paragraph': QuerySet(Paragraph).filter(id=paragraph_id)},
                 select_string=get_file_content(
                     os.path.join(PROJECT_DIR, "apps", "common", 'sql', 'list_embedding_text.sql')))
-            # 删除段落
+            # Delete a paragraph
             VectorStore.get_embedding_vector().delete_by_paragraph_id(paragraph_id)
-            # 批量向量化
+            # Batch Vectorization
             VectorStore.get_embedding_vector().batch_save(data_list)
         except Exception as e:
-            kb_builder_error.error(f'向量化段落:{paragraph_id}出现错误{str(e)}{traceback.format_exc()}')
+            kb_builder_error.error(f'Vectorize Paragraph:{paragraph_id}An error occurred{str(e)}{traceback.format_exc()}')
             status = Status.error
         finally:
             QuerySet(Paragraph).filter(id=paragraph_id).update(**{'status': status})
-            kb_builder.info(f'结束--->向量化段落:{paragraph_id}')
+            kb_builder.info(f'End--->Vectorized paragraph:{paragraph_id}')
 
     @staticmethod
     @embedding_poxy
     def embedding_by_document(document_id):
         """
-        向量化文档
-        :param document_id: 文档id
+        Vectorized Documents
+        :param document_id: document_id
         :return: None
         """
-        kb_builder.info(f"开始--->向量化文档:{document_id}")
+        kb_builder.info(f"Begin--->Vectorized Documents:{document_id}")
         status = Status.success
         try:
             data_list = native_search(
@@ -132,37 +132,37 @@ class ListenerManagement:
                     'paragraph': QuerySet(Paragraph).filter(document_id=document_id)},
                 select_string=get_file_content(
                     os.path.join(PROJECT_DIR, "apps", "common", 'sql', 'list_embedding_text.sql')))
-            # 删除文档向量数据
+            # Deleting document vector data
             VectorStore.get_embedding_vector().delete_by_document_id(document_id)
-            # 批量向量化
+            # Batch Vectorization
             VectorStore.get_embedding_vector().batch_save(data_list)
         except Exception as e:
-            kb_builder_error.error(f'向量化文档:{document_id}出现错误{str(e)}{traceback.format_exc()}')
+            kb_builder_error.error(f'Vectorized Documents:{document_id}An error occurred{str(e)}{traceback.format_exc()}')
             status = Status.error
         finally:
             # 修改状态
             QuerySet(Document).filter(id=document_id).update(**{'status': status})
             QuerySet(Paragraph).filter(document_id=document_id).update(**{'status': status})
-            kb_builder.info(f"结束--->向量化文档:{document_id}")
+            kb_builder.info(f"End--->Vectorized Document:{document_id}")
 
     @staticmethod
     @embedding_poxy
     def embedding_by_dataset(dataset_id):
         """
-        向量化知识库
-        :param dataset_id: 知识库id
+        Vectorized Knowledge Base
+        :param dataset_id: knwledge base id
         :return: None
         """
-        kb_builder.info(f"开始--->向量化数据集:{dataset_id}")
+        kb_builder.info(f"Start--->Vectorize Dataset:{dataset_id}")
         try:
             document_list = QuerySet(Document).filter(dataset_id=dataset_id)
-            kb_builder.info(f"数据集文档:{[d.name for d in document_list]}")
+            kb_builder.info(f"Dataset documentation:{[d.name for d in document_list]}")
             for document in document_list:
                 ListenerManagement.embedding_by_document(document.id)
         except Exception as e:
-            kb_builder_error.error(f'向量化数据集:{dataset_id}出现错误{str(e)}{traceback.format_exc()}')
+            kb_builder_error.error(f'Vectorized dataset:{dataset_id}An error occurred{str(e)}{traceback.format_exc()}')
         finally:
-            kb_builder.info(f"结束--->向量化数据集:{dataset_id}")
+            kb_builder.info(f"Finish--->Vectorized dataset:{dataset_id}")
 
     @staticmethod
     def delete_embedding_by_document(document_id):

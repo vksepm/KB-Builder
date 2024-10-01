@@ -26,13 +26,13 @@
         <img src="@/assets/upload-icon.svg" alt="" />
         <div class="el-upload__text">
           <p>
-            拖拽文件至此上传或
-            <em class="hover" @click.prevent="handlePreview(false)"> 选择文件 </em>
-            <em class="hover" @click.prevent="handlePreview(true)"> 选择文件夹 </em>
+            Drag files here to upload or
+            <em class="hover" @click.prevent="handlePreview(false)"> Select File </em>
+            <em class="hover" @click.prevent="handlePreview(true)"> Select Folder </em>
           </p>
           <div class="upload__decoration">
-            <p>支持格式：TXT、Markdown、PDF、DOCX，每次最多上传50个文件，每个文件不超过 100MB</p>
-            <p>若使用【高级分段】建议上传前规范文件的分段标识</p>
+            <p>Supported formats: TXT, Markdown, PDF, DOCX. Up to 50 files can be uploaded each time, and each file cannot exceed 100MB</p>
+            <p>If you use 【Advanced Segmentation】, it is recommended to standardize the segmentation mark of the file before uploading</p>
           </div>
         </div>
       </el-upload>
@@ -72,7 +72,7 @@ const form = ref({
 })
 
 const rules = reactive({
-  fileList: [{ required: true, message: '请上传文件', trigger: 'change' }]
+  fileList: [{ required: true, message: 'Please upload a file', trigger: 'change' }]
 })
 const FormRef = ref()
 
@@ -88,19 +88,19 @@ const fileHandleChange = (file: any, fileList: UploadFiles) => {
   //1、判断文件大小是否合法，文件限制不能大于10M
   const isLimit = file?.size / 1024 / 1024 < 100
   if (!isLimit) {
-    MsgError('文件大小超过 100MB')
+    MsgError('File size exceeds 100MB')
     fileList.splice(-1, 1) //移除当前超出大小的文件
     return false
   }
   if (!isRightType(file?.name)) {
-    MsgError('文件格式不支持')
+    MsgError('File format not supported')
     fileList.splice(-1, 1)
     return false
   }
 }
 
 const onExceed = () => {
-  MsgError('每次最多上传50个文件')
+  MsgError('Upload a maximum of 50 files each time')
 }
 
 const handlePreview = (bool: boolean) => {
@@ -114,7 +114,7 @@ const handlePreview = (bool: boolean) => {
 }
 
 /*
-  表单校验
+  Form Validation
 */
 function validate() {
   if (!FormRef.value) return

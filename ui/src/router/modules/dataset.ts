@@ -2,7 +2,7 @@ import Layout from '@/layout/main-layout/index.vue'
 const datasetRouter = {
   path: '/dataset',
   name: 'dataset',
-  meta: { title: '问答库', permission: 'DATASET:READ' },
+  meta: { title: 'Question and Answer Library', permission: 'DATASET:READ' },
   redirect: '/dataset',
   children: [
     {
@@ -11,7 +11,7 @@ const datasetRouter = {
       component: () => import('@/views/dataset/index.vue')
     },
     {
-      path: '/dataset/:type', // create 或者 upload
+      path: '/dataset/:type', // create or upload
       name: 'CreateDataset',
       meta: { activeMenu: '/dataset' },
       component: () => import('@/views/dataset/CreateDataset.vue'),
@@ -20,7 +20,7 @@ const datasetRouter = {
     {
       path: '/dataset/:id',
       name: 'DatasetDetail',
-      meta: { title: '文档', activeMenu: '/dataset' },
+      meta: { title: 'Document', activeMenu: '/dataset' },
       component: Layout,
       hidden: true,
       children: [
@@ -30,7 +30,7 @@ const datasetRouter = {
           meta: {
             icon: 'app-document',
             iconActive: 'app-document-active',
-            title: '文档预处理',
+            title: 'Document Pre-Processing',
             active: 'document',
             parentPath: '/dataset/:id',
             parentName: 'DatasetDetail'
@@ -42,7 +42,7 @@ const datasetRouter = {
           name: 'DocRewrite',
           meta: {
             icon: 'DocumentAdd',
-            title: '文档结构改写',
+            title: 'Document Structure Rewrite',
             active: 'doc_rewrite',
             parentPath: '/dataset/:id',
             parentName: 'DatasetDetail'
@@ -54,7 +54,7 @@ const datasetRouter = {
           name: 'qa_generate',
           meta: {
             icon: 'DocumentAdd',
-            title: '问答文件生成',
+            title: 'Question and Answer Document Generation',
             active: 'qa_generate',
             parentPath: '/dataset/:id',
             parentName: 'DatasetDetail'
@@ -67,7 +67,7 @@ const datasetRouter = {
           meta: {
             icon: 'app-document',
             iconActive: 'app-document-active',
-            title: '结果文件',
+            title: 'Result File',
             active: 'qa_document',
             parentPath: '/dataset/:id',
             parentName: 'DatasetDetail'
@@ -80,7 +80,7 @@ const datasetRouter = {
           meta: {
             icon: 'app-setting',
             iconActive: 'app-setting-active',
-            title: '设置',
+            title: 'Setup',
             active: 'setting',
             parentPath: '/dataset/:id',
             parentName: 'DatasetDetail'

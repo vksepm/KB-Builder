@@ -1,7 +1,7 @@
 <template>
   <el-dialog
     class="paragraph-source"
-    title="问答库引用"
+    title="Question and Answer Library Reference"
     v-model="dialogVisible"
     destroy-on-close
     append-to-body
@@ -11,10 +11,10 @@
       <el-scrollbar>
         <div class="p-16">
           <el-form label-position="top">
-            <el-form-item label="用户问题">
+            <el-form-item label="User Questions">
               <el-input v-model="detail.problem_text" disabled />
             </el-form-item>
-            <el-form-item label="优化后问题">
+            <el-form-item label="Problem after optimization">
               <el-input v-model="detail.padding_problem_text" disabled />
             </el-form-item>
             <el-form-item label="引用分段">

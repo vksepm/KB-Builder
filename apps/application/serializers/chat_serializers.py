@@ -161,7 +161,7 @@ class ChatSerializers(serializers.Serializer):
             # 添加工作表
             worksheet = workbook.add_sheet('Sheet1')
             data = [
-                ['会话ID', '摘要', '用户问题', '优化后问题', '回答', '用户反馈', '引用分段数', '分段标题+内容',
+                ['会话ID', '摘要', '用户问题', 'Problem after optimization', '回答', '用户反馈', '引用分段数', '分段标题+内容',
                  '标注', '消耗tokens', '耗时（s）', '提问时间'],
                 *[self.to_row(row) for row in data_list]
             ]

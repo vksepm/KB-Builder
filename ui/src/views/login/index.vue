@@ -1,7 +1,7 @@
 <template>
   <login-layout v-loading="loading">
-    <LoginContainer subTitle="欢迎使用 KB Builder 问答生成工具">
-      <h2 class="mb-24">普通登录</h2>
+    <LoginContainer subTitle="Welcome to KB Builder Q&A Generator">
+      <h2 class="mb-24">Normal login</h2>
       <el-form
         class="login-form"
         :rules="rules"
@@ -27,14 +27,14 @@
               size="large"
               class="input-item"
               v-model="loginForm.password"
-              placeholder="请输入密码"
+              placeholder="Please enter your password"
               show-password
             >
             </el-input>
           </el-form-item>
         </div>
       </el-form>
-      <el-button size="large" type="primary" class="w-full" @click="login">登录</el-button>
+      <el-button size="large" type="primary" class="w-full" @click="login">Log in</el-button>
       <div class="operate-container flex-between mt-12">
         <!-- <el-button class="register" @click="router.push('/register')" link type="primary">
           注册
@@ -45,7 +45,7 @@
           link
           type="primary"
         >
-          忘记密码?
+          Forgot Password?
         </el-button>
       </div>
     </LoginContainer>
@@ -77,7 +77,7 @@ const rules = ref<FormRules<LoginRequest>>({
   password: [
     {
       required: true,
-      message: '请输入密码',
+      message: 'Please enter your password',
       trigger: 'blur'
     }
   ]

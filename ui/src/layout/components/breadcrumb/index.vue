@@ -60,7 +60,7 @@
                   <el-button link>
                     <el-icon class="mr-4">
                       <Plus />
-                    </el-icon> 创建应用
+                    </el-icon> Create an application
                   </el-button>
                 </div>
               </template>
@@ -69,7 +69,7 @@
                   <el-button link>
                     <el-icon class="mr-4">
                       <Plus />
-                    </el-icon> 创建问答库
+                    </el-icon> Create a Q&A library
                   </el-button>
                 </div>
               </template>

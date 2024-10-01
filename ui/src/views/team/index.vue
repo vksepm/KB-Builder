@@ -174,7 +174,7 @@ function MemberPermissions(id: String) {
 function deleteMember(row: TeamMember) {
   MsgConfirm(
     `Remove member?：${row.username}?`,
-    'Removal will cancel the member's knowledge base and app permissions.',
+    'Removal will cancel the member\'s knowledge base and app permissions.',
 
     {
       confirmButtonText: 'Remove',
